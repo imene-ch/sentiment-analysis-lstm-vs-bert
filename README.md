@@ -1,5 +1,4 @@
-# sentiment-analysis-lstm-vs-bert
-Comparing LSTM and fine-tuned BERT for sentiment analysis on IMDB movie reviews — 92.64% accuracy with BERT vs 56.91% with LSTM
+
 # Sentiment Analysis: LSTM vs BERT
 
 A head-to-head comparison of two deep learning architectures — a classical LSTM and a fine-tuned BERT transformer — on binary sentiment classification of movie reviews.
