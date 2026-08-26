@@ -72,6 +72,7 @@ BERT outperformed the LSTM by **+35.7 percentage points** in accuracy, despite t
 4. **Evaluation** — accuracy, F1, precision, recall, confusion matrices on the full 25k test set
 
 ## Repo Structure
+```
 ├── notebooks/
 │   └── NLP_Sentiment_LSTM_vs_BERT.ipynb   # Full notebook: EDA → preprocessing → training → evaluation
 ├── models/
