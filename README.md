@@ -13,7 +13,7 @@ A head-to-head comparison of two deep learning architectures — a classical LST
 
 ## Dataset
 
-![EDA visualization showing balanced classes and review length distribution](eda_visualization.png)
+![EDA visualization showing balanced classes and review length distribution](results/eda_visualization.png)
 
 The dataset is perfectly balanced (12,500 positive / 12,500 negative), with an average review length of 234 words.
 
@@ -28,7 +28,7 @@ The dataset is perfectly balanced (12,500 positive / 12,500 negative), with an a
 | Parameters | 3,482,114 | 109,483,778 |
 | Epochs trained | 10 | 3 |
 
-![Model comparison: confusion matrices and metric bar chart for LSTM vs BERT](model_comparison.png)
+![Model comparison: confusion matrices and metric bar chart for LSTM vs BERT](results/model_comparison.png)
 
 BERT outperformed the LSTM by **+35.7 percentage points** in accuracy, despite training for fewer epochs — its pretraining on a large text corpus gave it a strong head start on understanding English before ever seeing an IMDB review.
 
@@ -40,14 +40,14 @@ BERT outperformed the LSTM by **+35.7 percentage points** in accuracy, despite t
 
 **LSTM** — overfits after ~epoch 6: training accuracy keeps climbing while validation accuracy plateaus around 51–57%.
 
-![LSTM training and validation loss/accuracy curves](lstm_training_curves.png)
+![LSTM training and validation loss/accuracy curves](results/lstm_training_curves.png)
 
 </td>
 <td width="50%">
 
 **BERT** — generalizes well: validation accuracy tracks training accuracy closely across all 3 epochs.
 
-![BERT training and validation loss/accuracy curves](bert_training_curves.png)
+![BERT training and validation loss/accuracy curves](results/bert_training_curves.png)
 
 </td>
 </tr>
@@ -72,16 +72,20 @@ BERT outperformed the LSTM by **+35.7 percentage points** in accuracy, despite t
 4. **Evaluation** — accuracy, F1, precision, recall, confusion matrices on the full 25k test set
 
 ## Repo Structure
-
-```
-├── NLP_Sentiment_LSTM_vs_BERT.ipynb   # Full notebook: EDA → preprocessing → training → evaluation
-├── app.py                             # App for running inference
-├── lstm_model.pth                     # Trained LSTM weights
-├── eda_visualization.png              # Class balance & review length plots
-├── lstm_training_curves.png           # LSTM loss/accuracy over epochs
-├── bert_training_curves.png           # BERT loss/accuracy over epochs
-├── model_comparison.png               # Side-by-side metric comparison + confusion matrices
-└── final-NLP_Report_Sentiment_LSTM_vs_BERT.docx  # Full written report
+├── notebooks/
+│   └── NLP_Sentiment_LSTM_vs_BERT.ipynb   # Full notebook: EDA → preprocessing → training → evaluation
+├── models/
+│   └── lstm_model.pth                     # Trained LSTM weights
+├── results/
+│   ├── eda_visualization.png              # Class balance & review length plots
+│   ├── lstm_training_curves.png           # LSTM loss/accuracy over epochs
+│   ├── bert_training_curves.png           # BERT loss/accuracy over epochs
+│   └── model_comparison.png               # Side-by-side metric comparison + confusion matrices
+├── reports/
+│   └── final-NLP_Report_Sentiment_LSTM_vs_BERT.docx  # Full written report
+├── app.py                                 # App for running inference
+├── requirements.txt                       # Python dependencies
+└── README.md
 ```
 
 ## Tech Stack
